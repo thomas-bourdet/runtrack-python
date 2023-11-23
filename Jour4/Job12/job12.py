@@ -1,19 +1,15 @@
-reflist = [2, 12, 21, 42, 24, 6, 18, 92, 7, 48, 3]
-
-print("Avant :", reflist)
-
 def tri(liste):
-    n = 0
+    if not liste:
+        return liste
 
-    for i in liste:
-        n += 1
+    pivot = liste[0]
+    inferieurs = [x for x in liste[1:] if x <= pivot]
+    superieurs = [x for x in liste[1:] if x > pivot]
 
-    for i in range(n):
-        for j in range(0, n-i-1):
-            if liste[j] > liste[j+1]:
-                liste[j], liste[j+1] = liste[j+1], liste[j]
+    return tri(inferieurs) + [pivot] + tri(superieurs)
 
+L = [9, 75, 35, 49, 3, 16, 17, 12, 62, 90]
 
-tri(reflist)
+listri= tri(L)
 
-print("Après :", reflist)
+print(listri)

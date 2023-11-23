@@ -8,3 +8,4 @@ for nombre in L:
 
 print(L)
 print(f"Le nombre de multiple de 3 dans la liste est de : {x3}")
+

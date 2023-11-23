@@ -5,3 +5,4 @@ min = min(L)
 
 print(f"la valeur max est : {max}")
 print(f"la valeur min est : {min}")
+
