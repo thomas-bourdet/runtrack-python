@@ -1,27 +1,23 @@
-def round_number(n):
-    if n - int(n) < 0.5:
-        return int(n)
-    else:
-        return int(n) + 1
-
-def sort_list(lst):
-    i = 0
-    while i < len(lst):
-        j = i + 1
-        while j < len(lst):
-            if lst[i] > lst[j]:
-                lst[i], lst[j] = lst[j], lst[i]
-            j += 1
-        i += 1
-    return lst
-
 numbers = [22.4, 4.0, 16.22, 9.10, 11.00, 12.22, 14.20, 5.20, 17.50]
-rounded = []
+rounded = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 i = 0
-while i < len(numbers):
-    rounded.append(round_number(numbers[i]))
+while i < 9:
+    if numbers[i] - (numbers[i] // 1) < 0.5:
+        rounded[i] = numbers[i] // 1
+    else:
+        rounded[i] = numbers[i] // 1 + 1
     i += 1
 
-sorted = sort_list(rounded)
+sorted = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+i = 0
+while i < 9:
+    j = i + 1
+    while j < 9:
+        if rounded[i] > rounded[j]:
+            temp = rounded[i]
+            rounded[i] = rounded[j]
+            rounded[j] = temp
+        j += 1
+    i += 1
 
-print(sorted)
+print(rounded)
